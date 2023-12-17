@@ -1,0 +1,17 @@
+CREATE TABLE IF NOT EXISTS `type` (
+    `id` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+    `card` INT(10) UNSIGNED NOT NULL,
+    PRIMARY KEY (`id`)
+    );
+
+CREATE TABLE IF NOT EXISTS `book` (
+    `bookid` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+    `card` INT(10) UNSIGNED NOT NULL,
+    PRIMARY KEY (`bookid`)
+    );
+
+INSERT INTO type(card) VALUES(FLOOR(1 + RAND() * 20));
+INSERT INTO book(card) VALUES(FLOOR(1 + RAND() * 20));
+-- 上述两条插入命令执行20次
+
+

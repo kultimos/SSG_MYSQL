@@ -1,0 +1,7 @@
+CREATE TABLE a(f1 INT,f2 INT,INDEX(f1)) ENGINE=INNODB;
+CREATE TABLE b(f1 INT,f2 INT) ENGINE=INNODB;
+
+INSERT INTO a values(1,1),(2,2),(3,3),(4,4),(5,5),(6,6);
+INSERT INTO b values(3,3),(4,4),(5,5),(6,6),(7,7),(8,8);
+# 测试1
+EXPLAIN SELECT * FROM a LEFT JOIN b ON(a.f1=b.f1) WHERE (a.f2=b.f2);
